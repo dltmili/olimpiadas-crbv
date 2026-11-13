@@ -1,528 +1,215 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olimpiadas CRBV - Club de Regatas Bella Vista</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        crbvBlue: '#0b1d3a',
-                        crbvDark: '#071224',
-                        crbvYellow: '#fbbf24',
-                        crbvGold: '#f59e0b',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #0b1d3a 0%, #071224 100%);
-        }
-        .gold-glow {
-            box-shadow: 0 0 25px rgba(251, 191, 36, 0.3);
-        }
+        body { font-family: 'Montserrat', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased selection:bg-yellow-400 selection:text-slate-900">
+<body class="bg-[#0b192c] text-white antialiased selection:bg-[#ffcc00] selection:text-[#0b192c]">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-crbvBlue/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-crbvBlue font-black text-xl shadow-lg">
-                    <i class="fa-solid fa-medal"></i>
+    <!-- Header / Hero Section -->
+    <header class="relative overflow-hidden bg-gradient-to-b from-[#07101d] to-[#0b192c] border-b border-blue-900/40">
+        <div class="max-w-4xl mx-auto px-4 py-12 text-center relative z-10">
+            <!-- Logo Badge -->
+            <div class="inline-flex items-center justify-center p-3 bg-white/5 rounded-full border border-yellow-500/30 mb-6 shadow-xl shadow-yellow-500/5">
+                <span class="text-xs font-bold tracking-widest text-[#ffcc00] uppercase px-3 py-1 bg-yellow-500/10 rounded-full">Club de Regatas Bella Vista</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-4 uppercase drop-shadow-md">
+                Olimpiadas <span class="text-[#ffcc00]">CRBV</span>
+            </h1>
+            <p class="text-lg md:text-xl text-blue-200/90 font-medium max-w-xl mx-auto mb-8">
+                Un día de todo el club, compartiendo. Deporte, familia y diversión en un mismo lugar.
+            </p>
+
+            <!-- Event quick info pills -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="flex items-center gap-2 bg-blue-950/80 border border-blue-800/60 px-5 py-3 rounded-2xl shadow-md">
+                    <svg class="w-5 h-5 text-[#ffcc00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="font-bold text-sm">Sábado 12 de diciembre</span>
                 </div>
-                <div>
-                    <span class="text-lg font-black tracking-wider uppercase text-white block leading-none">Olimpiadas</span>
-                    <span class="text-xs font-bold text-yellow-400 tracking-widest uppercase">CRBV</span>
+                <div class="flex items-center gap-2 bg-blue-950/80 border border-blue-800/60 px-5 py-3 rounded-2xl shadow-md">
+                    <svg class="w-5 h-5 text-[#ffcc00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="font-bold text-sm">10:30 a 16:00 h</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
-                <a href="#idea" class="hover:text-yellow-400 transition-colors">La Idea</a>
-                <a href="#participan" class="hover:text-yellow-400 transition-colors">Quiénes Participan</a>
-                <a href="#equipos" class="hover:text-yellow-400 transition-colors">Equipos</a>
-                <a href="#entradas" class="hover:text-yellow-400 transition-colors">Entradas</a>
-                <a href="#juegos" class="hover:text-yellow-400 transition-colors">Juegos</a>
-                <a href="#cronograma" class="hover:text-yellow-400 transition-colors">Cronograma</a>
-            </nav>
+
+            <!-- CTA Button (Pronto) -->
             <div>
-                <a href="#inscripcion" class="bg-yellow-400/80 hover:bg-yellow-400 text-crbvBlue font-bold px-5 py-2.5 rounded-full text-sm shadow-md transition-all inline-flex items-center space-x-2">
-                    <i class="fa-solid fa-clock"></i>
-                    <span>Próximamente</span>
-                </a>
+                <button disabled class="inline-flex items-center gap-3 bg-gray-600/50 text-gray-300 font-extrabold px-8 py-4 rounded-2xl shadow-lg cursor-not-allowed border border-gray-500/30">
+                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    Inscripciones Próximamente
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- 1. Hero / Portada -->
-    <section class="relative min-h-screen hero-gradient flex items-center justify-center pt-24 pb-16 overflow-hidden px-4">
-        <!-- Background decorative elements -->
-        <div class="absolute -top-40 -left-40 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
 
-        <div class="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-            <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-yellow-500/30 px-4 py-2 rounded-full text-yellow-400 text-xs sm:text-sm font-semibold tracking-wide uppercase gold-glow">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>Sábado 12 de diciembre • 10:30 a 16 h</span>
-            </div>
-
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase leading-none">
-                Olimpiadas <span class="text-yellow-400 block sm:inline">CRBV</span>
-            </h1>
-
-            <p class="text-xl sm:text-2xl text-slate-300 font-medium max-w-2xl mx-auto italic">
-                "Un día de todo el club, compartiendo"
+        <!-- La Idea -->
+        <section class="bg-gradient-to-br from-blue-950/60 to-blue-900/30 border border-blue-800/40 rounded-3xl p-8 shadow-xl">
+            <h2 class="text-2xl font-extrabold text-[#ffcc00] mb-4 flex items-center gap-3">
+                <span class="w-3 h-3 bg-[#ffcc00] rounded-full inline-block"></span>
+                La Idea
+            </h2>
+            <p class="text-lg text-blue-100/90 leading-relaxed mb-6">
+                Juntar a todo el club en un día divertido, sano y familiar. Pensado para chicos, grandes, jugadores y familias completas.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <a href="#inscripcion" class="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-300 text-crbvBlue font-extrabold text-lg px-8 py-4 rounded-full shadow-xl transition-all transform hover:scale-105 inline-flex items-center justify-center space-x-3">
-                    <i class="fa-solid fa-clock"></i>
-                    <span>Inscripciones Próximamente</span>
-                </a>
-                <a href="#idea" class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all inline-flex items-center justify-center space-x-2">
-                    <span>Conocer más</span>
-                    <i class="fa-solid fa-arrow-down text-yellow-400"></i>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-12 max-w-2xl mx-auto text-center border-t border-slate-800">
-                <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-800">
-                    <span class="block text-3xl font-black text-yellow-400">4</span>
-                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Equipos Mixtos</span>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-blue-900/40 border border-blue-700/30 p-5 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2 text-base flex items-center gap-2">🏉 🏑 Rugby y Hockey Juntos</h3>
+                    <p class="text-sm text-blue-200/80">Los dos deportes del club mezclados en los mismos equipos, integrando categorías, infantiles, juveniles y planteles superiores.</p>
                 </div>
-                <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-800">
-                    <span class="block text-3xl font-black text-yellow-400">Todo</span>
-                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">El Club Unido</span>
-                </div>
-                <div class="col-span-2 sm:col-span-1 p-4 bg-slate-800/40 rounded-xl border border-slate-800">
-                    <span class="block text-3xl font-black text-yellow-400">8</span>
-                    <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Capitanes Superiores</span>
+                <div class="bg-blue-900/40 border border-blue-700/30 p-5 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2 text-base flex items-center gap-2">👨‍👩‍👧‍👦 Para Todas las Edades</h3>
+                    <p class="text-sm text-blue-200/80">Madres, padres, socios, amigos, exjugadores y abuelos. Todos participan y suman para sus equipos.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 2. La Idea -->
-    <section id="idea" class="py-20 bg-slate-950 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Propósito del evento</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">La Idea</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+        <!-- Precios y Entradas -->
+        <section>
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold tracking-widest text-[#ffcc00] uppercase px-3 py-1 bg-yellow-500/10 rounded-full">Costos</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">Entradas</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl hover:border-yellow-500/50 transition-all group">
-                    <div class="w-14 h-14 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400 text-2xl mb-6 group-hover:bg-yellow-400 group-hover:text-crbvBlue transition-all">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Juntar a todo el club</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Un día divertido, sano y familiar para encontrarnos, compartir risas y disfrutar de las instalaciones del Club de Regatas Bella Vista.
-                    </p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl hover:border-yellow-500/50 transition-all group">
-                    <div class="w-14 h-14 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400 text-2xl mb-6 group-hover:bg-yellow-400 group-hover:text-crbvBlue transition-all">
-                        <i class="fa-solid fa-face-smile-beam"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Para todas las edades</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Juegos y actividades pensados especialmente para chicos, grandes, jugadores experimentados y familias enteras. ¡Nadie se queda afuera!
-                    </p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl hover:border-yellow-500/50 transition-all group">
-                    <div class="w-14 h-14 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400 text-2xl mb-6 group-hover:bg-yellow-400 group-hover:text-crbvBlue transition-all">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Rugby y Hockey Juntos</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        Los dos deportes estelares del club mezclados y integrados en los mismos equipos para potenciar la amistad y el compañerismo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Quiénes Participan -->
-    <section id="participan" class="py-20 bg-slate-900 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Comunidad CRBV</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">¿Quiénes participan?</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-                <p class="text-slate-300 mt-4 text-lg">Es un evento abierto para absolutamente todo el club.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Rugby -->
-                <div class="bg-crbvBlue p-8 rounded-2xl border border-blue-900/50 shadow-lg relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 text-blue-950 text-9xl opacity-20 pointer-events-none">
-                        <i class="fa-solid fa-football"></i>
-                    </div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-crbvBlue text-xl font-bold">
-                            <i class="fa-solid fa-football"></i>
-                        </div>
-                        <h3 class="text-2xl font-black text-white uppercase">Rugby</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 font-medium">
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Todas las categorías</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Planteles superiores</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Infantiles y juveniles</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Madres y padres</span></li>
-                    </ul>
-                </div>
-
-                <!-- Hockey -->
-                <div class="bg-crbvBlue p-8 rounded-2xl border border-blue-900/50 shadow-lg relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 text-blue-950 text-9xl opacity-20 pointer-events-none">
-                        <i class="fa-solid fa-hockey-puck"></i>
-                    </div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-crbvBlue text-xl font-bold">
-                            <i class="fa-solid fa-hockey-puck"></i>
-                        </div>
-                        <h3 class="text-2xl font-black text-white uppercase">Hockey</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-300 font-medium">
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Todas las tiras y categorías</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Planteles superiores (Jugadores y jugadoras)</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Chicos y chicas</span></li>
-                        <li class="flex items-center space-x-3"><i class="fa-solid fa-circle-check text-yellow-400"></i><span>Socios, amigos, ex jugadores y abuelos</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Cómo funciona / Equipos y Capitanes -->
-    <section id="equipos" class="py-20 bg-slate-950 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Estructura del torneo</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">¿Cómo Funciona?</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Steps Grid -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-yellow-400 text-crbvBlue font-black rounded-full flex items-center justify-center text-lg shadow-md">1</div>
-                    <h3 class="text-xl font-bold text-white mt-4 mb-3">Inscripción</h3>
-                    <p class="text-slate-400">Cada participante se anota completando el formulario online con sus datos y categoría.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-yellow-400 text-crbvBlue font-black rounded-full flex items-center justify-center text-lg shadow-md">2</div>
-                    <h3 class="text-xl font-bold text-white mt-4 mb-3">4 Equipos Únicos</h3>
-                    <p class="text-slate-400">La organización arma 4 equipos mezclando deportes, edades y géneros con nombres representativos.</p>
-                </div>
-
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center relative">
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-yellow-400 text-crbvBlue font-black rounded-full flex items-center justify-center text-lg shadow-md">3</div>
-                    <h3 class="text-xl font-bold text-white mt-4 mb-3">Capitanes Estratégicos</h3>
-                    <p class="text-slate-400">Definen de antemano quién participa en cada actividad para que todos jueguen y se diviertan.</p>
-                </div>
-            </div>
-
-            <!-- Capitanes info block -->
-            <div class="bg-crbvBlue border border-yellow-500/20 rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-2xl">
-                <span class="text-yellow-400 font-bold uppercase tracking-wider text-sm">Líderes de equipo</span>
-                <h3 class="text-3xl sm:text-4xl font-black text-white mt-2 mb-6">8 Capitanes en Total</h3>
-                <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-8">
-                    1 jugador + 1 jugadora de planteles superiores por cada equipo. Son la cara visible: alientan, integran y contagian el espíritu deportivo.
-                </p>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 font-bold text-yellow-400">Equipo 1</div>
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 font-bold text-yellow-400">Equipo 2</div>
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 font-bold text-yellow-400">Equipo 3</div>
-                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 font-bold text-yellow-400">Equipo 4</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Entradas y Precios -->
-    <section id="entradas" class="py-20 bg-slate-900 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Valores y accesos</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">Entradas y Precios</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Card 1 -->
-                <div class="bg-slate-950 rounded-2xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between">
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <!-- Precio Individual -->
+                <div class="bg-gradient-to-b from-blue-950 to-blue-900/80 border border-blue-800/80 p-8 rounded-3xl text-center shadow-lg relative overflow-hidden flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400 text-xl mb-6">
-                            <i class="fa-solid fa-child-reaching"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Menores y Juveniles</h3>
-                        <p class="text-slate-400 text-sm mb-6">Quienes juegan en divisiones menores y juveniles.</p>
-                        <div class="text-4xl font-black text-yellow-400 mb-6">$5.000</div>
-                    </div>
-                    <div class="w-full bg-slate-800/60 text-slate-400 font-bold py-3 rounded-xl text-center text-sm border border-slate-700/50">
-                        Próximamente
+                        <div class="text-sm font-semibold uppercase tracking-wider text-blue-300 mb-2">Entrada General</div>
+                        <div class="text-5xl font-black text-[#ffcc00] mb-4">$5.000</div>
+                        <p class="text-sm text-blue-200/80">Por persona para disfrutar de todas las actividades, juegos y el evento completo.</p>
                     </div>
                 </div>
 
-                <!-- Card 2 (Featured Family) -->
-                <div class="bg-crbvBlue rounded-2xl p-8 border-2 border-yellow-400 shadow-2xl transform md:-translate-y-4 flex flex-col justify-between relative">
-                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-crbvBlue font-extrabold text-xs uppercase px-4 py-1 rounded-full shadow-md">
-                        ¡Beneficio Familiar!
+                <!-- Descuento Familiar -->
+                <div class="bg-gradient-to-b from-blue-950 to-blue-900/80 border border-yellow-500/40 p-8 rounded-3xl text-center shadow-lg relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute -top-3 -right-3 bg-[#ffcc00] text-[#0b192c] text-xs font-black px-4 py-1.5 rounded-bl-xl shadow">
+                        ¡PROMOCIÓN!
                     </div>
                     <div>
-                        <div class="w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center text-crbvBlue text-xl mb-6 shadow-md">
-                            <i class="fa-solid fa-people-roof"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Familias</h3>
-                        <p class="text-slate-300 text-sm mb-6">Si vienen en familia, todos pagan precio de menor.</p>
-                        <div class="text-5xl font-black text-yellow-400 mb-6">$5.000</div>
-                    </div>
-                    <div class="w-full bg-yellow-400/90 text-crbvBlue font-black py-3.5 rounded-xl text-center text-sm shadow-lg">
-                        Próximamente
+                        <div class="text-sm font-semibold uppercase tracking-wider text-blue-300 mb-2">Pack Familiar</div>
+                        <div class="text-4xl font-black text-white mb-2">20% OFF</div>
+                        <div class="text-xs text-[#ffcc00] font-bold mb-4">Aplicando a partir de 3 integrantes</div>
+                        <p class="text-sm text-blue-200/80">Si vienen 3 o más personas de la misma familia, obtienen un 20% de descuento en el total.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Card 3 -->
-                <div class="bg-slate-950 rounded-2xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between">
+        <!-- Los Juegos -->
+        <section class="bg-gradient-to-br from-blue-950/60 to-blue-900/30 border border-blue-800/40 rounded-3xl p-8 shadow-xl">
+            <h2 class="text-2xl font-extrabold text-[#ffcc00] mb-6 text-center">Los Juegos y Actividades</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-blue-900/40 border border-blue-700/30 p-4 rounded-2xl text-center">
+                    <div class="text-2xl mb-2">⚽</div>
+                    <h3 class="font-bold text-white text-sm mb-1">Penales de Fútbol</h3>
+                    <p class="text-xs text-blue-200/70">Campeonato por equipos</p>
+                </div>
+                <div class="bg-blue-900/40 border border-blue-700/30 p-4 rounded-2xl text-center">
+                    <div class="text-2xl mb-2">🧠</div>
+                    <h3 class="font-bold text-white text-sm mb-1">Trivia del Club</h3>
+                    <p class="text-xs text-blue-200/70">Preguntas sobre nuestra historia</p>
+                </div>
+                <div class="bg-blue-900/40 border border-blue-700/30 p-4 rounded-2xl text-center">
+                    <div class="text-2xl mb-2">🎯</div>
+                    <h3 class="font-bold text-white text-sm mb-1">Torneo de Drop</h3>
+                    <p class="text-xs text-blue-200/70">Precisión con la ovalada</p>
+                </div>
+                <div class="bg-blue-900/40 border border-blue-700/30 p-4 rounded-2xl text-center">
+                    <div class="text-2xl mb-2">🏃</div>
+                    <h3 class="font-bold text-white text-sm mb-1">Carrera de Bolsa</h3>
+                    <p class="text-xs text-blue-200/70">Clásico para todas las edades</p>
+                </div>
+            </div>
+            <p class="text-center text-xs text-blue-300/70 mt-6">...y varios más a definir (tirar de la soga, posta, slalom con palo de hockey, lanzamiento de line, búsqueda del tesoro).</p>
+        </section>
+
+        <!-- El Partido del Día -->
+        <section class="bg-gradient-to-r from-blue-900/60 via-blue-950 to-blue-900/60 border border-yellow-500/30 rounded-3xl p-8 text-center relative overflow-hidden shadow-xl">
+            <div class="absolute top-0 right-0 bg-[#ffcc00]/10 w-32 h-32 rounded-full blur-2xl"></div>
+            <span class="text-xs font-bold tracking-widest text-[#ffcc00] uppercase px-3 py-1 bg-yellow-500/10 rounded-full">Al mediodía (12:50 a 13:20 h)</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-3 mb-4">El Partido del Día</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 my-6">
+                <div class="bg-blue-900/80 px-6 py-3 rounded-2xl border border-blue-700/50 font-bold text-white">Plantel de Rugby</div>
+                <span class="text-[#ffcc00] font-black text-xl">VS</span>
+                <div class="bg-blue-900/80 px-6 py-3 rounded-2xl border border-blue-700/50 font-bold text-white">Plantel de Hockey</div>
+            </div>
+            <p class="text-sm text-blue-200/80 max-w-md mx-auto">Partido de hockey mixto entre los planteles superiores de rugby y hockey del club.</p>
+        </section>
+
+        <!-- Cronograma Tentativo -->
+        <section class="bg-gradient-to-br from-blue-950/60 to-blue-900/30 border border-blue-800/40 rounded-3xl p-8 shadow-xl">
+            <h2 class="text-2xl font-extrabold text-[#ffcc00] mb-6 text-center">Cronograma Tentativo</h2>
+            <div class="space-y-4 max-w-xl mx-auto">
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">10:30</div>
                     <div>
-                        <div class="w-12 h-12 bg-yellow-400/10 rounded-xl flex items-center justify-center text-yellow-400 text-xl mb-6">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Plantel Superior y Mayores</h3>
-                        <p class="text-slate-400 text-sm mb-6">Jugadores de planteles superiores, adultos y mayores.</p>
-                        <div class="text-4xl font-black text-yellow-400 mb-6">$7.000</div>
-                    </div>
-                    <div class="w-full bg-slate-800/60 text-slate-400 font-bold py-3 rounded-xl text-center text-sm border border-slate-700/50">
-                        Próximamente
+                        <div class="font-bold text-white text-sm">Llegada y Acreditación</div>
+                        <div class="text-xs text-blue-300/80">Asignación de colores por equipo</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Los Juegos & 7. El Partido del Día -->
-    <section id="juegos" class="py-20 bg-slate-950 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Diversión y Competencia</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">Los Juegos del Día</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Games Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-yellow-400 text-3xl mb-4"><i class="fa-solid fa-futbol"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Penales de Fútbol</h3>
-                    <p class="text-slate-400 text-sm">Campeonato por equipos con máxima emoción frente al arco.</p>
-                </div>
-
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-yellow-400 text-3xl mb-4"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Trivia del Club</h3>
-                    <p class="text-slate-400 text-sm">Preguntas desafiantes sobre la historia y vivencias del CRBV.</p>
-                </div>
-
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-yellow-400 text-3xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Torneo de Drop</h3>
-                    <p class="text-slate-400 text-sm">Precisión absoluta con la pelota ovalada a los palos.</p>
-                </div>
-
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800">
-                    <div class="text-yellow-400 text-3xl mb-4"><i class="fa-solid fa-sack-xmark"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Carrera de Bolsa</h3>
-                    <p class="text-slate-400 text-sm">Un clásico indiscutido para todas las edades y risas aseguradas.</p>
-                </div>
-            </div>
-
-            <!-- Extra ideas badge -->
-            <div class="text-center bg-slate-900/60 p-6 rounded-2xl border border-slate-800 max-w-3xl mx-auto mb-20 text-slate-300 text-sm">
-                <span class="font-bold text-yellow-400">Y muchas sorpresas más:</span> Tirar de la soga, postas, slalom con palo de hockey, lanzamiento de line y búsqueda del tesoro.
-            </div>
-
-            <!-- 7. El Partido del Día (Highlight) -->
-            <div class="bg-gradient-to-r from-crbvBlue to-slate-900 border-2 border-yellow-400/40 rounded-3xl p-8 sm:p-12 shadow-2xl max-w-4xl mx-auto relative overflow-hidden">
-                <div class="absolute -right-20 -top-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="text-center mb-8">
-                    <span class="bg-yellow-400 text-crbvBlue text-xs font-black uppercase px-4 py-1.5 rounded-full">Al Mediodía (12:50 a 13:20 hs)</span>
-                    <h3 class="text-3xl sm:text-4xl font-black text-white mt-4 uppercase">El Partido del Día</h3>
-                </div>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-center">
-                    <div class="bg-slate-900/80 px-8 py-6 rounded-2xl border border-slate-800 flex-1 w-full">
-                        <i class="fa-solid fa-football text-yellow-400 text-3xl mb-2"></i>
-                        <h4 class="text-xl font-bold text-white">Plantel de Rugby</h4>
-                    </div>
-                    <div class="text-3xl font-black text-yellow-400 uppercase tracking-widest my-2 sm:my-0">VS</div>
-                    <div class="bg-slate-900/80 px-8 py-6 rounded-2xl border border-slate-800 flex-1 w-full">
-                        <i class="fa-solid fa-hockey-puck text-yellow-400 text-3xl mb-2"></i>
-                        <h4 class="text-xl font-bold text-white">Plantel de Hockey</h4>
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">11:00</div>
+                    <div>
+                        <div class="font-bold text-white text-sm">1.ª Ronda de Juegos</div>
+                        <div class="text-xs text-blue-300/80">Arrancan las competencias</div>
                     </div>
                 </div>
-
-                <p class="text-center text-slate-300 font-medium mt-8">
-                    Emocionante partido de hockey mixto enfrentando a los planteles superiores de rugby y hockey.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. Cronograma Tentativo -->
-    <section id="cronograma" class="py-20 bg-slate-900 px-4">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-yellow-400 text-sm font-bold uppercase tracking-widest block mb-2">Agenda de la jornada</span>
-                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase">Cronograma Tentativo</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Timeline -->
-            <div class="space-y-6">
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">10:30 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Llegada y Acreditación</h3>
-                            <p class="text-slate-400 text-sm">Asignación de colores y equipos para todos los participantes.</p>
-                        </div>
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">12:50</div>
+                    <div>
+                        <div class="font-bold text-white text-sm">Partido Especial</div>
+                        <div class="text-xs text-blue-300/80">Hockey mixto: rugby vs. hockey</div>
                     </div>
-                    <span class="text-xs uppercase tracking-wider bg-slate-900 text-slate-400 px-3 py-1 rounded-full border border-slate-800">Inicio</span>
                 </div>
-
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">11:00 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">1.ª Ronda de Juegos</h3>
-                            <p class="text-slate-400 text-sm">Arrancan las pruebas y competencias por equipos en todo el club.</p>
-                        </div>
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">13:20</div>
+                    <div>
+                        <div class="font-bold text-white text-sm">Almuerzo</div>
+                        <div class="text-xs text-blue-300/80">Todo el club a la mesa</div>
                     </div>
-                    <span class="text-xs uppercase tracking-wider bg-slate-900 text-slate-400 px-3 py-1 rounded-full border border-slate-800">Competencia</span>
                 </div>
-
-                <div class="bg-crbvBlue p-6 rounded-2xl border border-yellow-500/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">12:50 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Partido del Día: Hockey Mixto (Rugby vs. Hockey)</h3>
-                            <p class="text-slate-300 text-sm">El encuentro imperdible entre planteles superiores.</p>
-                        </div>
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">14:00</div>
+                    <div>
+                        <div class="font-bold text-white text-sm">2.ª Ronda y Definiciones</div>
+                        <div class="text-xs text-blue-300/80">Juegos y definiciones finales</div>
                     </div>
-                    <span class="text-xs uppercase tracking-wider bg-yellow-400 text-crbvBlue font-bold px-3 py-1 rounded-full">Destacado</span>
                 </div>
-
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">13:20 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Almuerzo</h3>
-                            <p class="text-slate-400 text-sm">Todo el club reunido compartiendo la mesa y buena comida.</p>
-                        </div>
-                    </div>
-                    <span class="text-xs uppercase tracking-wider bg-slate-900 text-slate-400 px-3 py-1 rounded-full border border-slate-800">Descanso</span>
-                </div>
-
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">14:00 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">2.ª Ronda de Juegos y Definiciones</h3>
-                            <p class="text-slate-400 text-sm">Últimos puntos y definiciones de los campeonatos.</p>
-                        </div>
-                    </div>
-                    <span class="text-xs uppercase tracking-wider bg-slate-900 text-slate-400 px-3 py-1 rounded-full border border-slate-800">Competencia</span>
-                </div>
-
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-yellow-400 text-crbvBlue font-black px-4 py-2 rounded-xl text-lg">15:30 hs</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Premiación y Cierre</h3>
-                            <p class="text-slate-400 text-sm">Coronación del equipo campeón y cierre de la jornada (15:00 a 16:00 h).</p>
-                        </div>
-                    </div>
-                    <span class="text-xs uppercase tracking-wider bg-slate-900 text-slate-400 px-3 py-1 rounded-full border border-slate-800">Final</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. Llamado a la Acción Final / Inscripción Interactiva -->
-    <section id="inscripcion" class="py-20 hero-gradient px-4 border-t border-slate-800">
-        <div class="max-w-3xl mx-auto text-center space-y-8">
-            <span class="inline-flex items-center space-x-2 bg-yellow-400/10 border border-yellow-500/30 text-yellow-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
-                <i class="fa-solid fa-clock"></i>
-                <span>Apertura de inscripciones próximamente</span>
-            </span>
-            <h2 class="text-4xl sm:text-6xl font-black text-white uppercase">Sumate con tu familia</h2>
-            <p class="text-slate-300 text-lg">
-                El formulario online estará disponible muy pronto. Vení a compartir un día inolvidable con todo el club el sábado 12 de diciembre de 10:30 a 16 h.
-            </p>
-
-            <div class="bg-slate-900/90 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl text-center">
-                <div class="py-8 space-y-4">
-                    <div class="w-16 h-16 bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 rounded-full flex items-center justify-center text-3xl mx-auto shadow-lg">
-                        <i class="fa-solid fa-hourglass-half"></i>
-                    </div>
-                    <h3 class="text-2xl font-black text-white">Inscripciones aún no habilitadas</h3>
-                    <p class="text-slate-300 max-w-md mx-auto">Muy pronto habilitaremos el formulario oficial para que puedas anotarte y asegurar tu lugar en las Olimpiadas CRBV.</p>
-                    <div class="pt-4">
-                        <span class="inline-block bg-slate-800 text-slate-400 font-bold px-6 py-3 rounded-xl text-sm border border-slate-700">
-                            Próximamente disponible
-                        </span>
+                <div class="flex items-center gap-4 bg-blue-900/30 p-4 rounded-2xl border border-blue-800/30">
+                    <div class="bg-[#ffcc00] text-[#0b192c] font-black px-3 py-1.5 rounded-xl text-sm">15:30</div>
+                    <div>
+                        <div class="font-bold text-white text-sm">Premiación y Cierre</div>
+                        <div class="text-xs text-blue-300/80">Coronación del equipo campeón (Cierre estimado 15:30 a 16:00 h)</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="text-center py-8">
+            <h2 class="text-2xl font-extrabold text-white mb-4">¡Sumate con tu familia y vení a compartir el día!</h2>
+            <p class="text-blue-200/80 mb-6 text-sm">Sábado 12 de diciembre de 10:30 a 16 h en el club.</p>
+            <button disabled class="inline-flex items-center gap-3 bg-gray-600/50 text-gray-300 font-extrabold px-8 py-4 rounded-2xl shadow-lg cursor-not-allowed border border-gray-500/30">
+                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                Inscripciones Próximamente
+            </button>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-center text-slate-500 text-sm">
-        <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <div class="flex items-center justify-center space-x-3">
-                <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-crbvBlue font-black text-sm">
-                    <i class="fa-solid fa-medal"></i>
-                </div>
-                <span class="text-white font-black tracking-wider uppercase">Club de Regatas Bella Vista</span>
-            </div>
-            <p>Olimpiadas CRBV • Sábado 12 de diciembre de 10:30 a 16 h.</p>
-            <p class="text-xs text-slate-600">© 2026 CRBV. Todos los derechos reservados.</p>
-        </div>
+    <footer class="bg-[#050e18] border-t border-blue-900/40 py-6 text-center text-xs text-blue-400/60">
+        <p>Club de Regatas Bella Vista — Olimpiadas CRBV</p>
     </footer>
 
-    <!-- Scripting for interactivity -->
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            document.getElementById('formInscripcion').style.display = 'none';
-            document.getElementById('successMessage').classList.remove('hidden');
-        }
-
-        function resetForm() {
-            document.getElementById('formInscripcion').reset();
-            document.getElementById('formInscripcion').style.display = 'block';
-            document.getElementById('successMessage').classList.add('hidden');
-        }
-    </script>
 </body>
 </html>
